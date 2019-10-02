@@ -32,30 +32,12 @@ class App extends React.Component {
     return output
   }
 
-  getToggleWithoutJS() {
-    return (
-    <>
-      <div>
-        <p>This is some expandable content.</p>
-
-        <p id="hashLink">
-          I have expanded like a Pufferfish.
-          <a href="#">Please collapse this poor fish.</a>
-        </p>
-      </div>
-
-      <a href="#hashLink">Expand</a>
-    </>
-    )
-  }
-
   render() {
     return (
       <div className="App">
         <button onClick={() => this.toggleColorPicker()} >toggle colorpicker</button>
         {this.renderColorPicker()}
         <div style={{background: this.state.background, width: 100, height: 100}}></div>
-        {this.getToggleWithoutJS()}
       </div>
     );
   }
