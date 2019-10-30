@@ -64,7 +64,9 @@
   "scripts": {
     "start": "webpack-dashboard node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run --record --key 360dbe2b-07f0-4b9e-817a-74352af58d8c"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -136,6 +138,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "cypress": "^3.5.0",
     "webpack-dashboard": "^3.2.0"
   }
 }
