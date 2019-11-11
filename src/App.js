@@ -1,52 +1,70 @@
-import React from 'react';
-import { SketchPicker, TwitterPicker, BlockPicker, CirclePicker, HuePicker, AlphaPicker, MaterialPicker } from 'react-color'
-import './App.css';
+import React from 'react'
+import { Button, Form, Dropdown } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
+import './App.css'
+
+
+const localeOptions = [
+  {
+    key: 'Australia',
+    text: 'Australia',
+    value: 'au'
+  },
+  {
+    key: 'English(US)',
+    text: 'English(US)',
+    value: 'en_US'
+  },
+  {
+    key: 'China',
+    text: 'China',
+    value: 'zh_CN'
+  },
+  {
+    key: 'French',
+    text: 'French',
+    value: 'fr'
+  },
+]
 
 class App extends React.Component {
 
   state = {
-    background: '#000',
-    getColorPicker: false
+    locale: 'en_US'
   }
 
-  toggleColorPicker() {
+
+  handleLocaleChange = (opt) => {
     this.setState({
-      getColorPicker: !this.state.getColorPicker
+      locale: opt.value
     })
   }
 
-  handleChangeComplete(color) {
-    this.setState({ background: color.hex });
-  }
-
-  renderColorPicker() {
-    let output = null
-    if (this.state.getColorPicker) {
-      output = (
-				<SketchPicker
-					color={ this.state.background }
-					colors = {["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4", "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#ff5722", "#795548", "#607d8b"]}
-					onChange={(color) => this.handleChangeComplete(color)}
-				/>
-        // <CirclePicker
-        //   color={ this.state.background }
-				// 	circleSize={15}
-				// 	colors = {["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4", "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#ff5722", "#795548", "#607d8b"]}
-        //  onChange={(color) => this.handleChangeComplete(color)}
-        // />
-      )
-    }
-    return output
-  }
 
   render() {
     return (
       <div className="App">
-        <button onClick={() => this.toggleColorPicker()} >toggle colorpicker</button>
-        {this.renderColorPicker()}
-        <div style={{background: this.state.background, width: 100, height: 100}}></div>
+        <Form>
+          <Dropdown
+            placeholder='localization'
+            fluid
+            selection
+            value={this.state.locale}
+            options={localeOptions}
+            onChange={this.handleLocaleChange}
+          />
+          <Form.Field>
+            <label>First Name</label>
+            <input placeholder='First Name' />
+          </Form.Field>
+          <Form.Field>
+            <label>Last Name</label>
+            <input placeholder='Last Name' />
+          </Form.Field>
+          <Button type='submit'>Submit</Button>
+        </Form>
       </div>
-    );
+    )
   }
 }
 
