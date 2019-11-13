@@ -1,0 +1,10 @@
+.App {
+  height: auto;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+}
+.react-card-container {
+  display: flex;
+  flex-direction: column;
+}
