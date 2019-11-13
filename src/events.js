@@ -5,7 +5,7 @@ const EventEmitter = {
     this.events[event].forEach(callback => callback(data))
   },
   subscribe: function (event, callback) {
-    if(this.events[event]) this.events[event] = []
+    if(!this.events[event]) this.events[event] = []
     this.events[event].push(callback)
   }
 }

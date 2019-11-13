@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button, Form } from 'semantic-ui-react'
 import Cards from 'react-credit-cards'
+import CookieContainer from '../components/CookieContainer'
+
+import './App.css'
 import 'semantic-ui-css/semantic.min.css'
 import 'react-credit-cards/es/styles-compiled.css'
-import './App.css'
-
 
 class App extends React.Component {
   state = {
@@ -33,6 +34,7 @@ class App extends React.Component {
                 focused={this.state.focus}
                 name={this.state.name}
                 number={this.state.number}
+                preview={false}
               />
               <Form>
                 <Form.Field>
@@ -79,10 +81,15 @@ class App extends React.Component {
            </div>
   }
 
+renderCookie() {
+  return <CookieContainer/>
+}
+
   render() {
     return (
       <div className="App">
-        {this.renderReactCards()}
+        {/* {this.renderReactCards()} */}
+        {this.renderCookie()}
       </div>
     )
   }
