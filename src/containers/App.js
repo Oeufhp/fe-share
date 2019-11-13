@@ -1,11 +1,8 @@
 import React from 'react'
-import { Button, Form } from 'semantic-ui-react'
-import Cards from 'react-credit-cards'
 import CookieContainer from '../components/CookieContainer'
+import CreditCard from '../components/CreditCard'
 
 import './App.css'
-import 'semantic-ui-css/semantic.min.css'
-import 'react-credit-cards/es/styles-compiled.css'
 
 class App extends React.Component {
   state = {
@@ -27,58 +24,7 @@ class App extends React.Component {
   }
 
   renderReactCards() {
-    return <div className='react-card-container'>
-              <Cards
-                cvc={this.state.cvc}
-                expiry={this.state.expiry}
-                focused={this.state.focus}
-                name={this.state.name}
-                number={this.state.number}
-                preview={false}
-              />
-              <Form>
-                <Form.Field>
-                  <label>Name</label>
-                  <input 
-                    name='name'
-                    placeholder='Name' 
-                    onFocus={this.handleInputFocus}
-                    onChange={this.handleInputChange}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>Number</label>
-                  <input
-                    type="tel"
-                    name='number'
-                    maxLength={16}
-                    placeholder='Number'
-                    onFocus={this.handleInputFocus}
-                    onChange={this.handleInputChange}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>expiry date</label>
-                  <input
-                    name='expiry'
-                    maxLength={4}
-                    placeholder='Expiry date'
-                    onFocus={this.handleInputFocus}
-                    onChange={this.handleInputChange}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>CVC</label>
-                  <input 
-                    name='cvc'
-                    maxLength={3}
-                    placeholder='CVC'
-                    onFocus={this.handleInputFocus}
-                    onChange={this.handleInputChange}
-                  />
-                </Form.Field>
-              </Form>
-           </div>
+    return <CreditCard/>
   }
 
 renderCookie() {
@@ -88,8 +34,8 @@ renderCookie() {
   render() {
     return (
       <div className="App">
-        {/* {this.renderReactCards()} */}
-        {this.renderCookie()}
+        {this.renderReactCards()}
+        {/* {this.renderCookie()} */}
       </div>
     )
   }
