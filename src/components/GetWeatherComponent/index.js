@@ -7,7 +7,7 @@ const GetWeatherComponent = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latLongObj.lat}&lon=${latLongObj.long}&appid=ce10580c41f6c702d44987f34d3a83fc`,
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latLongObj.lat}&lon=${latLongObj.long}&appid=''`,
       {
         method: 'GET',
       }
