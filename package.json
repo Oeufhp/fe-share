@@ -62,7 +62,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "webpack-dashboard node scripts/start.js",
+    "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "cypress:open": "./node_modules/.bin/cypress open",
@@ -139,7 +139,6 @@
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "cypress": "^3.5.0",
-    "serialize-javascript": "^2.1.1",
-    "webpack-dashboard": "^3.2.0"
+    "serialize-javascript": "^2.1.1"
   }
 }
