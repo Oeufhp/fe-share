@@ -137,7 +137,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.17.3",
-    "serialize-javascript": "^6.0.0",
+    "serialize-javascript": "^6.0.2",
     "yarn-upgrade-all": "^0.7.1"
   }
 }
